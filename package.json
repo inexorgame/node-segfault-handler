@@ -1,9 +1,10 @@
 {
-  "name": "segfault-handler",
+  "name": "@inexorgame/segfault-handler",
   "description": "catches SIGSEGV and prints diagnostic information",
-  "version": "1.0.0",
-  "author": "Dave Dopson <ddopson@gmail.com>",
+  "version": "1.0.1",
+  "maintainer": "The Inexor Team",
   "contributors": [
+    "Inexor <info@inexor.org>",
     "Dave Dopson <ddopson@gmail.com>",
     "Mark Smith <msmith@rallydev.com>",
     "David Swift <dswift@pccowboy.com>",
@@ -11,12 +12,22 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ddopson/node-segfault-handler.git"
+    "url": "https://github.com/inexorgame/node-segfault-handler.git"
   },
   "dependencies": {
     "bindings": "^1.2.1",
-    "nan": "^2.0.9"
+    "nan": "^2.0.9",
+    "node-pre-gyp": "^0.6.36"
   },
+  "devDependencies": {
+    "aws-sdk": "^2.92.0"
+  },
+  "bundledDependencies": ["node-pre-gyp"],
   "main": "index.js",
-  "license": "SEE LICENSE IN README.md"
+  "license": "LICENSE",
+  "binary": {
+    "module_name": "node-segfault",
+    "module_path": "./build/Release/",
+    "host": "https://your_module.s3-us-west-1.amazonaws.com"
+  }
 }

@@ -2,6 +2,15 @@
 
 This module is a critical tool for debugging Node.js C/C++ native code modules, and is safe to use in production environments.  Normally, when a bug is triggered in native code, the node process simply ends with no helpful information.  In production, this can manifest as worker processes restarting for seemingly no reason.  Running node in gdb is messy and infeasible for a production environment.  Instead this module will sit unobtrusively doing nothing (zero perf impact) as long as Node is well-behaved.  If a SIGSEGV signal is raised, the module will print a native stack trace to both STDERR and to a timestamped file (STDERR is usually ignored in production environments.  files are better).
 
+You can build the module like:
+
+```
+npm install -g node-gyp
+npm install
+node-gyp configure
+cd build && make
+```
+
 Using the module is as simple as:
 
 ```javascript
@@ -61,12 +70,12 @@ Now you can start debugging using tools like "objdump -dS module.node" to try an
 
 Cheers, enjoy.  And happy hunting.
 
+## Where it came from
+This module originally came from [Dave Dopson](https://github.com/ddopson/) and we forked it mainly to overcome `node-gyp`  as an end user dependency.
+
 # License
 
 This software is licensed for use under the BSD license. If you make good use of this or any of my other tools, I'd appreciate an email letting me know what you used it for or how you stumbled across it.
 
 We are using the callstack walker project from [Walking the Callstack](http://www.codeproject.com/Articles/11132/Walking-the-callstack) which is also BSD licensed.
 
-I previously licensed this library under the tounge-in-cheek [WTFPL](http://en.wikipedia.org/wiki/WTFPL), but none of my lawyers thought it was funny.
-
-   ---  Dave

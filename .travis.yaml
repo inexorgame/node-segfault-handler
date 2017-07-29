@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - "6"
+  - "7"
+before_install:
+  - npm i -g node-gyp
+script:
+  - node-gyp configure
+  - cd build && make
+
+deploy:
+  provider: bintray
+  file: "segfault-handler.json"
+  user: "inexor-game"
+  key: ""

@@ -1,4 +1,7 @@
+const binary = require('node-pre-gyp');
+const path = require('path')
+const binding_path = binary.find(path.resolve(path.join(__dirname,'./package.json')));
+const binding = require(binding_path);
 
-// The 'bindings' helper will try all the well-known paths that the module might compile to based on platform / version / debug / etc
-module.exports = require('bindings')('segfault-handler');
+module.exports = binding('segfault-handler');
 

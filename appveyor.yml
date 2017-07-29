@@ -1,0 +1,35 @@
+# Test against the latest version of this Node.js version
+environment:
+  nodejs_version: "6"
+  nodejs_version: "7"
+
+# Install scripts. (runs after repo cloning)
+install:
+  # Get the latest stable version of Node.js or io.js
+  - ps: Install-Product node $env:nodejs_version
+  # install modules
+  - npm install -g node-gyp
+  - npm install
+
+# Post-install test scripts.
+test_script:
+  # Output useful info for debugging.
+  - node --version
+  - npm --version
+
+
+# Don't actually build.
+build: off
+
+deploy:
+- provider: BinTray
+  username: inexorgame
+  api_key:
+    secure: AABBCC+DDD== # update this
+  subject: inexor-node
+  repo: segfault-handler
+  package: segfault-handler
+  version: 1.0.1
+  publish: true
+  override: true
+  explode: true
