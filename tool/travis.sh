@@ -1,6 +1,6 @@
 #! /bin/bash
 
-cd ..
+cd /segfault/
 npm install -g node-gyp
 node-gyp configure
 cd build && make
