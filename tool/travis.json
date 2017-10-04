@@ -4,6 +4,9 @@
     "repo": "node-segfault-handler",
     "name": "binaries"
   },
+  "version": {
+    "name": "1.0.0",
+  },
   "files":
   [
     {"includePattern": "build/stage/(.*)", "uploadPattern": "$1"}
