@@ -26,7 +26,7 @@
     "node-pre-gyp"
   ],
   "main": "index.js",
-  "license": "BSD-Source-Code",
+  "license": "MIT",
   "binary": {
     "module_name": "segfault-handler",
     "module_path": "./build/Release/",
