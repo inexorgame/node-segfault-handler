@@ -1,15 +1,30 @@
-language: node_js
-node_js:
-  - "6"
-  - "7"
-before_install:
-  - npm i -g node-gyp
-script:
-  - node-gyp configure
-  - cd build && make
+os: linux
+dist: trusty
+sudo: required
+services:
+  - docker
 
-deploy:
-  provider: bintray
-  file: "segfault-handler.json"
-  user: "inexor-game"
-  key: ""
+notifications:
+  email:
+    on_success: never
+    on_failure: change
+
+git:
+  depth: 5
+
+jobs:
+  include:
+    - env: docker_tag="ubuntu-xenial-node-js-6"
+    - env: docker_tag="ubuntu-xenial-node-js-latest-non-lts"
+
+before_install:
+  - sudo docker pull inexorgame/ci-docker':'${docker_tag} ;
+
+script:
+  - sudo docker run -v $(pwd)':'/segfault --net=host -it inexorgame/ci-docker':'${docker_tag} /segfault/tool/travis.sh;
+
+#deploy:
+  #provider: bintray
+  #file: "segfault-handler.json"
+  #user: "inexor-game"
+  #key: ""
