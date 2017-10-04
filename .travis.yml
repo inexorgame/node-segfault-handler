@@ -22,6 +22,8 @@ before_install:
   - sudo docker pull inexorgame/ci-docker':'${docker_tag} ;
 
 script:
+  # FIXME: when running Linux next time fix the file rights directly and commit, at least that should be somehow possible, see core repo...
+  - sudo chmod +x ./tool/travis.sh
   - sudo docker run -v $(pwd)':'/segfault --net=host -it inexorgame/ci-docker':'${docker_tag} /segfault/tool/travis.sh;
 
 #deploy:

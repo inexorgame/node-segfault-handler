@@ -1,5 +1,5 @@
 #! /bin/bash
 
-npm i -g node-gyp
+npm install -g node-gyp
 node-gyp configure
 cd build && make
