@@ -31,3 +31,5 @@ deploy:
   file: "travis/travis.json"
   user: "inexorbot"
   key: ${BINTRAY_KEY}
+  on:
+    all_branches: true
