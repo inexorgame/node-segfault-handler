@@ -10,6 +10,8 @@
     "David Swift <dswift@pccowboy.com>",
     "Anton Whalley <anton@venshare.com>"
   ],
+  "license": "MIT",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/inexorgame/node-segfault-handler.git"
@@ -17,19 +19,30 @@
   "dependencies": {
     "bindings": "^1.2.1",
     "nan": "^2.0.9",
-    "node-pre-gyp": "^0.6.36"
-  },
-  "devDependencies": {
-    "aws-sdk": "^2.92.0"
+    "node-pre-gyp": "^0.6.38"
   },
   "bundledDependencies": [
     "node-pre-gyp"
   ],
-  "main": "index.js",
-  "license": "MIT",
+  "scripts": {
+    "install": "node-pre-gyp install --fallback-to-build"
+  },
+  "targets": [
+    {
+      "target_name": "action_after_build",
+      "type": "none",
+      "dependencies": [ "<(module_name)" ],
+      "copies": [
+        {
+          "files": [ "<(PRODUCT_DIR)/<(module_name).node" ],
+          "destination": "<(module_path)"
+        }
+      ]
+    }
+  ],
   "binary": {
     "module_name": "segfault-handler",
     "module_path": "./build/Release/",
-    "host": "https://your_module.s3-us-west-1.amazonaws.com"
+    "host": "https://dl.bintray.com/inexorgame/node-segfault-handler/binaries"
   }
 }
