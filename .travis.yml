@@ -30,6 +30,7 @@ deploy:
   provider: bintray
   file: "travis/travis.json"
   user: "inexorbot"
-  key: ${BINTRAY_KEY}
+  key:
+    secure: "t0F0BpI7/l9aCdVNBTrdmc/fkFREXExl32RNUN+q9AtzCE2zUKQjy+EVLNqJLXujjH+UWG18vbo8TuaF/DpXyS1Cm0agxIA2IQ7R0U9nf0SruKql1NK0AiBzNfs/e1Y0QRwn77FAB5sqYjvKyIj4m6yZgl79MTdfCKV5fJJy1AXJeYSgKWdfdzMSL0ozTXakSG8OPjp5eNfLSDsFVxoVRqD6/qPJDGfZ+j+8/MDITfPqHpC4lE95KxFMi9rM3wzBlYxxtQxEe867vG5WVM84ECW+1AKoZ30ene84EQ4+SC17s/QAf/yo+ZwaRtnZEFltd4xg4DgYthW7NeS58pv9GEvJf2fURSW9mp47T/yorabesMESyY55X66uX7JF9QCSv7zgXhL+59gLlNstVfYGOB9CE+cStfjHBm4eFK8ZkhivhxQzL8zBKcAW8QA2Yu8MtvQ6UtR4TCqxQRJySwIl0Ff+0U1L7oVqFfadg2+DHT1bYzXlIXYqRCAHjQoi8wBH4e8Vm55mDoxM9EzDoLhPlyUN8OAxFePbGTcdMdb1CXoFZnGQWeTnByhyX0kiRr2WEV3WCaKdxP+ye39d/GW/Pe6x2yUCePhyFJ9aLMCUeNEJFXnF+6z2Vu6eo9ZMkHhOzzrm0WwjDzUUsYkL3VCYWLyB/SbvWzz9qNYuCWaMKkY="
   on:
     all_branches: true
