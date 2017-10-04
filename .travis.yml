@@ -26,8 +26,8 @@ script:
   - sudo chmod +x ./tool/travis.sh
   - sudo docker run -v $(pwd)':'/segfault --net=host -it inexorgame/ci-docker':'${docker_tag} /segfault/tool/travis.sh;
 
-#deploy:
-  #provider: bintray
-  #file: "segfault-handler.json"
-  #user: "inexor-game"
-  #key: ""
+deploy:
+  provider: bintray
+  file: "travis/travis.json"
+  user: "inexorbot"
+  key: ${BINTRAY_KEY}

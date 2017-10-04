@@ -1,0 +1,11 @@
+{
+  "package": {
+    "subject": "inexorgame",
+    "repo": "node-segfault-handler",
+    "name": "binaries"
+  },
+  "files":
+  [
+    {"includePattern": "build/stage/(.*)", "uploadPattern": "$2"}
+  ]
+}
