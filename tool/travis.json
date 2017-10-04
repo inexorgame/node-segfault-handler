@@ -6,6 +6,6 @@
   },
   "files":
   [
-    {"includePattern": "build/stage/(.*)", "uploadPattern": "$2"}
+    {"includePattern": "build/stage/(.*)", "uploadPattern": "$1"}
   ]
 }

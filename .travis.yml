@@ -30,7 +30,6 @@ deploy:
   provider: bintray
   file: "travis/travis.json"
   user: "inexorbot"
-  key:
-    - secure: ${BINTRAY_KEY}
+  key: ${BINTRAY_KEY}
   on:
     all_branches: true
