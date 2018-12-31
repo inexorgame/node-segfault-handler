@@ -73,6 +73,9 @@ Cheers, enjoy.  And happy hunting.
 ## Where it came from
 This module originally came from [Dave Dopson](https://github.com/ddopson/) and we forked it mainly to overcome `node-gyp`  as an end user dependency.
 
-# Credits
+# License
 
-We are using the callstack walker project from [Walking the Callstack](http://www.codeproject.com/Articles/11132/Walking-the-callstack) which is BSD licensed.
+This software is licensed for use under the BSD license. If you make good use of this or any of my other tools, I'd appreciate an email letting me know what you used it for or how you stumbled across it.
+
+We are using the callstack walker project from [Walking the Callstack](http://www.codeproject.com/Articles/11132/Walking-the-callstack) which is also BSD licensed.
+
